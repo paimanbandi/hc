@@ -22,7 +22,7 @@
   border-radius: 8px;
   font-size: 0.9rem;
   color: #1976d2;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
 }
 
 .transactions-list {
@@ -120,14 +120,14 @@
 }
 
 .transaction-detail-value.address {
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   word-break: break-all;
   color: #667eea;
   font-size: 0.9rem;
 }
 
 .transaction-detail-value.hash {
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   word-break: break-all;
   color: #999;
   font-size: 0.85rem;
@@ -144,7 +144,8 @@
   font-size: 0.9rem;
 }
 
-.loading, .error {
+.loading,
+.error {
   text-align: center;
   padding: 3rem;
   font-size: 1.1rem;
@@ -171,4 +172,7 @@
   }
 }
 
-
+.loading-spinner {
+  color: #667eea;
+  animation: spin 1s linear infinite;
+}
