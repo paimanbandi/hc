@@ -186,6 +186,11 @@
   color: #f57c00;
 }
 
+.consent-status.revoked {
+  background: #ffebee;
+  color: #c62828;
+}
+
 .consent-details {
   display: flex;
   flex-direction: column;
@@ -207,13 +212,13 @@
 }
 
 .consent-wallet {
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   word-break: break-all;
   color: #667eea;
 }
 
 .consent-tx-hash {
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   word-break: break-all;
   color: #999;
   font-size: 0.85rem;
@@ -274,5 +279,3 @@
     flex-direction: column;
   }
 }
-
-
