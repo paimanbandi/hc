@@ -38,6 +38,22 @@ const TransactionHistory = ({ account }) => {
     fetchTransactions();
   }, [account]);
 
+  const handleRetry = () => {
+    setLoading(true);
+    setError(null);
+    apiService
+      .getTransactions(account || null)
+      .then((response) => {
+        setTransactions(response.transactions || []);
+      })
+      .catch((err) => {
+        setError(err.message);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
   const formatAddress = (address) => {
     if (!address) return "";
     return `${address.slice(0, 8)}...${address.slice(-6)}`;
@@ -179,9 +195,10 @@ const TransactionHistory = ({ account }) => {
           <p>{error}</p>
           <button
             className="retry-button"
-            onClick={() => window.location.reload()}
+            onClick={handleRetry}
+            disabled={loading}
           >
-            Retry
+            {loading ? "Retrying..." : "Retry"}
           </button>
         </div>
       </div>
