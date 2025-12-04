@@ -89,6 +89,10 @@ const PatientList = ({ onSelectPatient }) => {
     }
   };
 
+  const handleRetry = () => {
+    fetchPatients();
+  };
+
   const handlePreviousPage = (e) => {
     e.preventDefault();
     if (currentPage > 1) {
@@ -139,7 +143,12 @@ const PatientList = ({ onSelectPatient }) => {
   if (error) {
     return (
       <div className="patient-list-container">
-        <div className="error">Error: {error}</div>
+        <div className="error">
+          <p>Error: {error}</p>
+          <button onClick={handleRetry} className="retry-button">
+            Retry
+          </button>
+        </div>
       </div>
     );
   }
